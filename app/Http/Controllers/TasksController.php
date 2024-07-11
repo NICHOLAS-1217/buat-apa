@@ -2,17 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Task;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 
 class TasksController extends Controller {
 
-    public function home() {
-        return view('tasks.home');
+    public function welcome() {
+        return view('tasks.welcome');
     }
 
-    public function main() {
-        return view('tasks.main');
+    public function index() {
+        $tasks = Task::all();
+        return view(
+            'tasks.index', 
+            ["tasks" => $tasks]
+        );
     }
 
     public function create() {
@@ -20,7 +25,12 @@ class TasksController extends Controller {
     }
 
     public function save(Request $request) {
-        return $request -> all();
+        $task = Task::create([
+            "title" => $request->input("title"),
+            "description" => $request->input("description")
+        ]);
+        
+        return redirect('/tasks');
     }
     
 }
