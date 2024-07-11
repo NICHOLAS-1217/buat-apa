@@ -20,13 +20,27 @@
                     <form action="/tasks/{{ $task->id }}" method="post">
                         @method('patch')
                         @csrf
-                        <button input="submit">complete</button>
+                        <button input="submit">
+                            <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                            <lord-icon
+                                src="https://cdn.lordicon.com/cgzlioyf.json"
+                                trigger="hover"
+                                style="width:50px;height:50px">
+                            </lord-icon>
+                        </button>
                     </form>
                 @else
                     <form action="/tasks/{{ $task->id }}" method="post">
                         @method('delete')
                         @csrf
-                        <button input="submit">delete</button>
+                        <button input="submit">
+                            <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                            <lord-icon
+                                src="https://cdn.lordicon.com/drxwpfop.json"
+                                trigger="hover"
+                                style="width:50px;height:50px">
+                            </lord-icon>    
+                        </button>
                     </form>
                 @endif
 
@@ -34,7 +48,14 @@
 
         @endforeach
 
-        <a href="/tasks/create">create</a>
+        <a href="/tasks/create">
+            <script src="https://cdn.lordicon.com/lordicon.js"></script>
+            <lord-icon
+                src="https://cdn.lordicon.com/zrkkrrpl.json"
+                trigger="hover"
+                style="width:50px;height:50px">
+            </lord-icon>
+        </a>
         
     </div>
 

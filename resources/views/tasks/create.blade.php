@@ -15,7 +15,14 @@
         <br>
         <input type="text" name="description">
         <br>
-        <button type="submit">Create</button>
+        <button type="submit">
+            <script src="https://cdn.lordicon.com/lordicon.js"></script>
+            <lord-icon
+                src="https://cdn.lordicon.com/zrkkrrpl.json"
+                trigger="hover"
+                style="width:50px;height:50px">
+            </lord-icon>
+        </button>
     </form>
 </div>
 
