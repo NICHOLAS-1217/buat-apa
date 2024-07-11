@@ -2,6 +2,6 @@
 
 @section('content')
 
-<h1>Buat Apa?</h1>
+    <p class="text">Buat Apa?</p>
 
 @endsection

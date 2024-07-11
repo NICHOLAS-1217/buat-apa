@@ -41,5 +41,11 @@ class TasksController extends Controller {
         $task->save();
         return redirect('/tasks');
     }
+
+    public function delete($id) {
+        $task = Task::where("id", $id)->first();
+        $task->delete();
+        return redirect('/tasks');
+    }
     
 }

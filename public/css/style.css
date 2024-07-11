@@ -2,6 +2,7 @@
     font-family: "Space Mono", monospace;
     font-weight: 700;
     font-style: normal;
+    letter-spacing: 5px;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -25,7 +26,7 @@ body {
 }
 
 .logo {
-    font-size: 32px;
+    font-size: 50px;
     color: black;
     text-decoration: none;
     font-weight: 700;
@@ -55,6 +56,30 @@ body {
     transition: 0.5s;
 }
 
-.content {
+.container {
+    display: inline-block;
     padding: 100px;
+}
+
+.text {
+    font-size: 100px;
+    border-right: 5px solid black;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation:
+        typing 3s steps(9),
+        cursor .5s step-end infinite alternate;
+}
+
+@keyframes cursor {
+    50% {
+        border-color: transparent;
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
 }

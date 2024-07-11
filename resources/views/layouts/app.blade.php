@@ -10,14 +10,14 @@
 </head>
 <body>
     <header class="header">
-        <a href="/" class="logo">Buat Apa?</a>
+        <a href="/" class="logo">BUATAPA</a>
         <nav class="navbar">
             <a href="/tasks">tasks</a>
             <a href="/tasks/create">add</a>
             <a href="#">profile</a>
         </nav>
     </header>
-    <div class="content">
+    <div class="container">
         @yield('content')
     </div>
 </body>

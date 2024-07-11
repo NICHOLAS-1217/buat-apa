@@ -1,31 +1,41 @@
 @extends('layouts.app')
 
 @section('content')
+    
+    <div class="container">
 
-    <h1>To-do tasks</h1>
+        <h1>To-do tasks</h1>
 
-    @foreach($tasks as $task)
+        @foreach($tasks as $task)
 
-        <div class="task">
+            <div class="task">
 
-            @if($task->isCompleted())
-                <span>completed</span>
-            @endif
-
-            <h2>{{ $task->title }}</h2>
-            <p>{{ $task->description }}</p>
-            <form action="/tasks/{{ $task->id }}" method="post">
-                @method('patch')
-                @csrf
-                @if(!$task->isCompleted())
-                    <button input="submit">complete</button>
+                @if($task->isCompleted())
+                    <span>completed</span>
                 @endif
-            </form>
 
-        </div>
+                <h2>{{ $task->title }}</h2>
+                <p>{{ $task->description }}</p>
+                @if(!$task->isCompleted())
+                    <form action="/tasks/{{ $task->id }}" method="post">
+                        @method('patch')
+                        @csrf
+                        <button input="submit">complete</button>
+                    </form>
+                @else
+                    <form action="/tasks/{{ $task->id }}" method="post">
+                        @method('delete')
+                        @csrf
+                        <button input="submit">delete</button>
+                    </form>
+                @endif
 
-    @endforeach
+            </div>
 
-    <a href="/tasks/create">create</a>
+        @endforeach
+
+        <a href="/tasks/create">create</a>
+        
+    </div>
 
 @endsection
