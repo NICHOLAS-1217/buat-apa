@@ -1,9 +1,10 @@
 <?php
 
+use App\Http\Controllers\TasksController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', "TaskController@index");
+Route::get('/', [TasksController::class, 'index']);   
 
-Route::get('/tasks', "TaskController@index");
+Route::get('/tasks', [TasksController::class, 'index']);
 
-Route::get('/tasks/create', "TaskController@create");
+Route::get('/tasks/create', [TasksController::class, 'create']);
