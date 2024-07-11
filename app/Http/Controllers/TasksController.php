@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Task;
 use Illuminate\Http\Request;
-use Illuminate\Http\RedirectResponse;
 
 class TasksController extends Controller {
 
@@ -13,7 +12,10 @@ class TasksController extends Controller {
     }
 
     public function index() {
-        $tasks = Task::all();
+        $tasks = Task::
+            orderBy("completed_at")->
+            orderBy("id", "DESC")->
+            get();
         return view(
             'tasks.index', 
             ["tasks" => $tasks]
@@ -30,6 +32,13 @@ class TasksController extends Controller {
             "description" => $request->input("description")
         ]);
         
+        return redirect('/tasks');
+    }
+
+    public function complete($id) {
+        $task = Task::where("id", $id)->first();
+        $task->completed_at = now();
+        $task->save();
         return redirect('/tasks');
     }
     

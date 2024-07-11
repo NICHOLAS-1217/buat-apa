@@ -13,5 +13,9 @@ class Task extends Model
         'title', 
         'description'
     ];
+
+    public function isCompleted() {
+        return $this->completed_at !== null;
+    }
     
 }
