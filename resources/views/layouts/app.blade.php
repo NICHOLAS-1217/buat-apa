@@ -10,9 +10,9 @@
 </head>
 <body>
     <header class="header">
-        <a href="#" class="logo">Buat Apa?</a>
+        <a href="/" class="logo">Buat Apa?</a>
         <nav class="navbar">
-            <a href="/">tasks</a>
+            <a href="/tasks">tasks</a>
             <a href="/tasks/create">add</a>
             <a href="#">profile</a>
         </nav>

@@ -2,6 +2,6 @@
 
 @section('content')
 
-<h1>Buat Apa?</h1>
+<h1>To-do tasks</h1>
 
 @endsection

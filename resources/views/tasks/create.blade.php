@@ -4,10 +4,15 @@
 
 <h1>New Task</h1>
 
-<form action="/tasks/create" method="post">
-    <label for="task_description">Task Description</label>
+<form action="/tasks" method="post">
+    @csrf
+    <label for="title">title</label>
     <br>
-    <input type="text" name="task_description">
+    <input type="text" name="title">
+    <br>
+    <label for="description">description</label>
+    <br>
+    <input type="text" name="description">
     <br>
     <button type="submit">Create</button>
 </form>
