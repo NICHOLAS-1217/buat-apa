@@ -13,7 +13,7 @@
         <br>
         <label for="description">description</label>
         <br>
-        <input type="text" name="description">
+        <textarea name="description" id="description"></textarea>
         <br>
         <button type="submit">
             <script src="https://cdn.lordicon.com/lordicon.js"></script>
