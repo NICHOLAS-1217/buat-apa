@@ -9,15 +9,15 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
-        <a href="/" class="logo">BUATAPA</a>
-        <nav class="navbar">
-            <a href="/tasks">tasks</a>
-            <a href="/tasks/create">add</a>
-            <a href="#">profile</a>
-        </nav>
-    </header>
-    <div class="container">
+    <div class="welcome-container">
+        <div class="header">
+            <a href="/" class="logo">BUATAPA</a>
+            <nav class="navbar">
+                <a href="/tasks">tasks</a>
+                <a href="/tasks/create">add</a>
+                <a href="#">profile</a>
+            </nav>
+        </div>
         @yield('content')
     </div>
 </body>

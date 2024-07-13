@@ -2,9 +2,12 @@
 
 @section('content')
     
-    <div class="container">
+    <div class="index_container">
 
-        <h1>To-do tasks</h1>
+        <div class="title">
+            <h1>To-do tasks</h1>
+        </div>
+
 
         @foreach($tasks as $task)
 

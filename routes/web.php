@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\TasksController;
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [TasksController::class, 'welcome']);   
@@ -14,3 +15,7 @@ Route::post('/tasks', [TasksController::class, 'save']);
 Route::patch('/tasks/{id}', [TasksController::class, 'complete']);
 
 Route::delete('/tasks/{id}', [TasksController::class, 'delete']);
+
+Route::get('/login', [AuthController::class, 'login']);
+
+Route::get('/register', [AuthController::class, 'register']);

@@ -12,17 +12,58 @@ body {
     min-height: 100vh;
 }
 
+.welcome-container {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "text main main"
+        "login main main"
+        "register main main"
+        "footer footer footer";
+    gap: 20px;
+    padding: 10px;
+}
+
+.index-container {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "title title title"
+        "form form form"
+        "footer footer footer";
+    gap: 20px;
+    padding: 10px;
+}
+
+.auth-contianer {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "title title title"
+        "form form form"
+        "footer footer footer";
+    gap: 20px;
+    padding: 10px;
+}
+
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 100px;
-    background: transparent;
+    padding: 15px 75px;
+    background: #3EB489;
     display: flex;
     justify-content: space-between;
+    z-index: 1;
     align-items: center;
-    z-index: 100;
+    grid-area: header;
 }
 
 .logo {
@@ -56,30 +97,70 @@ body {
     transition: 0.5s;
 }
 
-.container {
-    display: inline-block;
-    padding: 100px;
+.texting_container {
+    display: inline-block
 }
 
-.text {
-    font-size: 100px;
+.texting {
+    font-size: 30px;
+    padding-top: 100px;
+    grid-area: text;
     border-right: 5px solid black;
     width: 100%;
     white-space: nowrap;
     overflow: hidden;
-    animation:
-        typing 3s steps(13),
-        cursor .5s step-end infinite alternate;
-}
+    animation: 
+        typing 2s steps(16),
+        cursor .5s step-end infinite;
+}   
 
 @keyframes cursor {
-    50% {
-        border-color: transparent;
-    }
+    50% { border-color: transparent; }
+
 }
 
 @keyframes typing {
-    from {
-        width: 0;
-    }
+    from { width: 0; }
 }
+
+.icon {
+    grid-area: icon;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.main {
+    grid-area: main;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    grid-area: form;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    padding-top: 100px;
+    grid-area: title;
+}
+
+.login {
+    grid-area: login;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register {
+    grid-area: register;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
