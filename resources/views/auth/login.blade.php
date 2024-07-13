@@ -24,12 +24,33 @@
             </lord-icon>
         </div>
         <div class="form">
-            <form action="">
+            <form action="{{route('login_user')}}" method=“get”>
+                @csrf
                 <label for="email">email</label><br>
                 <input type="text" name="email" id="email"><br>
+                <span>
+                    @error('email')
+                        {{$message}}
+                    @enderror
+                </span><br>
                 <label for="password">password</label><br>
                 <input type="password" name="password" id="password"><br>
+                <span>
+                    @error('password')
+                        {{$message}}
+                    @enderror
+                </span><br>
                 <button type="submit">confirm</button><br>
+                @if(Session::has('success'))
+                    <span>
+                        {{Session::get('success')}}
+                    </span><br>
+                @endif
+                @if(Session::has('fail'))
+                    <span>
+                        {{Session::get('fail')}}
+                    </span><br>
+                @endif
             </form>
         </div>
     </div>

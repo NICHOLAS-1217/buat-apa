@@ -21,3 +21,5 @@ Route::get('/login', [AuthController::class, 'login']);
 Route::get('/register', [AuthController::class, 'register']);
 
 Route::post('/register_user', [AuthController::class, 'register_user'])->name("register_user");
+
+Route::get('/login_user', [AuthController::class, 'login_user'])->name("login_user");
