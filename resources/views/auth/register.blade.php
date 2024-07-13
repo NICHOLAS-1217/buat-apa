@@ -8,7 +8,7 @@
             <nav class="navbar">
                 <a href="/tasks">tasks</a>
                 <a href="/tasks/create">add</a>
-                <a href="#">profile</a>
+                <a href="/profile">profile</a>
             </nav>
         </div>
         <div class="title">
@@ -24,41 +24,43 @@
             </lord-icon>
         </div>
         <div class="form">
-            <form action="{{route('register_user')}}" method="post">
-                @csrf
-                <label for="username">username</label><br>
-                <input type="text" name="username" id="username" value="{{old('username')}}"><br>
-                <span>
-                    @error('username')
-                        {{$message}}
-                    @enderror
-                </span><br>
-                <label for="email">email</label><br>
-                <input type="text" name="email" id="email" value="{{old('password')}}"><br>
-                <span>
-                    @error('email')
-                        {{$message}}
-                    @enderror
-                </span><br>
-                <label for="password">password</label><br>
-                <input type="password" name="password" id="password"><br>
-                <span>
-                    @error('password')
-                        {{$message}}
-                    @enderror
-                </span><br>
-                <button type="submit">confirm</button><br>
-                @if(Session::has('success'))
+            <div class="vl">
+                <form action="{{route('register_user')}}" method="post">
+                    @csrf
+                    <label for="username">username</label><br>
+                    <input type="text" name="username" id="username" value="{{old('username')}}"><br>
                     <span>
-                        {{Session::get('success')}}
+                        @error('username')
+                            {{$message}}
+                        @enderror
                     </span><br>
-                @endif
-                @if(Session::has('fail'))
+                    <label for="email">email</label><br>
+                    <input type="text" name="email" id="email" value="{{old('password')}}"><br>
                     <span>
-                        {{Session::get('fail')}}
+                        @error('email')
+                            {{$message}}
+                        @enderror
                     </span><br>
-                @endif
-            </form>
+                    <label for="password">password</label><br>
+                    <input type="password" name="password" id="password"><br>
+                    <span>
+                        @error('password')
+                            {{$message}}
+                        @enderror
+                    </span><br>
+                    <button type="submit">confirm</button><br>
+                    @if(Session::has('success'))
+                        <span>
+                            {{Session::get('success')}}
+                        </span><br>
+                    @endif
+                    @if(Session::has('fail'))
+                        <span>
+                            {{Session::get('fail')}}
+                        </span><br>
+                    @endif
+                </form>
+            </div>
         </div>
     </div>
 

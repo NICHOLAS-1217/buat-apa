@@ -7,17 +7,17 @@
             <nav class="navbar">
                 <a href="/tasks">tasks</a>
                 <a href="/tasks/create">add</a>
-                <a href="#">profile</a>
+                <a href="/profile">profile</a>
             </nav>
         </div>
         <div class="texting_container">
             <div class="texting">
-                <h1>Nak... Buat Apa?</h1>
+                <h1>Nak... Buat Ap0?</h1>
             </div>
         </div>
         <div class="main">
             <div class="vl">
-            <h1>BUATAPA: Your Ultimate Productivity Companion</h1>
+                <h1>BUATAPA: Your Ultimate Productivity Companion</h1>
             </div>
             <p>BUATAPA is your ultimate productivity
             companion, designed to help you manage

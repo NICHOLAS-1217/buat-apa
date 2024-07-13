@@ -8,11 +8,11 @@
             <nav class="navbar">
                 <a href="/tasks">tasks</a>
                 <a href="/tasks/create">add</a>
-                <a href="#">profile</a>
+                <a href="/profile">profile</a>
             </nav>
         </div>
         <div class="title">
-            <h1>login</h1>
+            <h1>Login</h1>
             <hr>
         </div>
         <div class="icon">
@@ -24,8 +24,16 @@
             </lord-icon>
         </div>
         <div class="form">
+            <div class="vl">
             <form action="{{route('login_user')}}" method=“get”>
                 @csrf
+                <label for="username">username</label><br>
+                    <input type="text" name="username" id="username" value="{{old('username')}}"><br>
+                    <span>
+                        @error('username')
+                            {{$message}}
+                        @enderror
+                </span><br>
                 <label for="email">email</label><br>
                 <input type="text" name="email" id="email"><br>
                 <span>
@@ -52,6 +60,7 @@
                     </span><br>
                 @endif
             </form>
+            </div>
         </div>
     </div>
 

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
@@ -40,17 +41,36 @@ class AuthController extends Controller
             "email" => "required|email",
             "password" => "required|min:5"
         ]);
-
+    
         $user = User::where("email", $request->email)->first();
         if ($user) {
             if (Hash::check($request->password, $user->password)) {
-                $request->session()->put("LoggedUser", $user->id);
-                return redirect("/tasks");
+                $request->session()->put("logged_user", $user->id);
+                return redirect("/profile");
             } else {
                 return back()->with("fail", "Invalid password");
             }
         } else {
             return back()->with("fail", "No user found");
         }
-    }   
+    }
+    
+    public function profile() {
+        $data = null;
+        if (Session::has("logged_user")) {
+            $data = User::where("id", Session::get("logged_user"))->first();
+        }else {
+            return back()->with("fail", "Please login first");
+        
+        }
+        return view("auth.profile", compact("data"));
+    }
+
+    public function logout(){
+        if (Session::has("logged_user")) {
+            Session::pull("logged_user");
+            return redirect("/login");
+        }
+    }
+    
 }

@@ -33,7 +33,8 @@ body {
     grid-template-areas:
         "header header header"
         "title title title"
-        "form form form"
+        "content content content"
+        "create create create"
         "footer footer footer";
     gap: 20px;
     padding: 10px;
@@ -47,6 +48,33 @@ body {
         "header header header"
         "title title title"
         "icon form form"
+        "footer footer footer";
+    gap: 20px;
+    padding: 10px;
+}
+
+.profile_container {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "title title title"
+        "main main main"
+        "footer footer footer";
+    gap: 20px;
+    padding: 10px;
+
+}
+
+.create_container {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "title title title"
+        "form form form"
         "footer footer footer";
     gap: 20px;
     padding: 10px;
@@ -133,9 +161,9 @@ body {
 
 .main {
     grid-area: main;
-    display: flex;
     justify-content: center;
     align-items: center;
+    display: flex;
 }
 
 .form {
@@ -165,8 +193,27 @@ body {
 }
 
 .vl {
-    border-right: 5px solid black;
-    padding-right: 10px;
-    height: 300px;
+    border-radius: 15px;
+    border-top: 2px solid black;
+    border-right: 8px solid black;
+    border-bottom: 8px solid black;
+    border-left: 2px solid black;
+    height: auto;
+    padding: 20px;
+    margin: 20px;
+}
+
+.content {
+    grid-area: content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.create {
+    grid-area: create;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 

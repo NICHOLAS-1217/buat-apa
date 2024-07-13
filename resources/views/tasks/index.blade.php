@@ -15,11 +15,12 @@
 
         <div class="title">
             <h1>To-do tasks</h1>
+            <hr>
         </div>
+        <div class="content">
+            @foreach($tasks as $task)
 
-        @foreach($tasks as $task)
-
-            <div class="task">
+            <div class="vl">
 
                 @if($task->isCompleted())
                     <span>completed</span>
@@ -57,16 +58,19 @@
 
             </div>
 
-        @endforeach
+            @endforeach
+            <div class="create">
+                <a href="/tasks/create">
+                    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                    <lord-icon
+                        src="https://cdn.lordicon.com/zrkkrrpl.json"
+                        trigger="hover"
+                        style="width:50px;height:50px">
+                    </lord-icon>
+                </a>
+            </div>
+        </div>
 
-        <a href="/tasks/create">
-            <script src="https://cdn.lordicon.com/lordicon.js"></script>
-            <lord-icon
-                src="https://cdn.lordicon.com/zrkkrrpl.json"
-                trigger="hover"
-                style="width:50px;height:50px">
-            </lord-icon>
-        </a>
         
     </div>
 
