@@ -12,7 +12,7 @@ body {
     min-height: 100vh;
 }
 
-.welcome-container {
+.welcome_container {
     width: 90%;
     margin: auto;
     display: grid;
@@ -26,7 +26,7 @@ body {
     padding: 10px;
 }
 
-.index-container {
+.index_container {
     width: 90%;
     margin: auto;
     display: grid;
@@ -39,14 +39,14 @@ body {
     padding: 10px;
 }
 
-.auth-contianer {
+.auth_container {
     width: 90%;
     margin: auto;
     display: grid;
     grid-template-areas:
         "header header header"
         "title title title"
-        "form form form"
+        "icon form form"
         "footer footer footer";
     gap: 20px;
     padding: 10px;
@@ -162,5 +162,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.vl {
+    border-right: 5px solid black;
+    padding-right: 10px;
+    height: 300px;
 }
 

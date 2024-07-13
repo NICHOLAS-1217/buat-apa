@@ -4,10 +4,18 @@
     
     <div class="index_container">
 
+        <div class="header">
+            <a href="/" class="logo">BUATAPA</a>
+            <nav class="navbar">
+                <a href="/tasks">tasks</a>
+                <a href="/tasks/create">add</a>
+                <a href="#">profile</a>
+            </nav>
+        </div>
+
         <div class="title">
             <h1>To-do tasks</h1>
         </div>
-
 
         @foreach($tasks as $task)
 
