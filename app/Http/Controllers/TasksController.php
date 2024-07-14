@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Task;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use App\Models\User;
 
 class TasksController extends Controller {
 
@@ -12,18 +14,34 @@ class TasksController extends Controller {
     }
 
     public function index() {
-        $tasks = Task::
+        $data = null;
+        if (Session::has("logged_user")) {
+            $data = User::where("id", Session::get("logged_user"))->first();
+            $tasks = Task::
             orderBy("completed_at")->
             orderBy("id", "DESC")->
             get();
-        return view(
-            'tasks.index', 
-            ["tasks" => $tasks]
-        );
+            return view(
+                'tasks.index', 
+                ["tasks" => $tasks],
+                compact("data")
+            );
+        } else {
+            return redirect("/login");
+        }
     }
 
     public function create() {
-        return view('tasks.create');
+        $data = null;
+        if (Session::has("logged_user")) {
+            $data = User::where("id", Session::get("logged_user"))->first();
+            return view(
+                'tasks.create',
+                compact("data")
+            );
+        } else {
+            return redirect("/login");
+        }
     }
 
     public function save(Request $request) {

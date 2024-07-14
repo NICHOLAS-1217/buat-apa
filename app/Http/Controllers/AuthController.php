@@ -46,7 +46,7 @@ class AuthController extends Controller
         if ($user) {
             if (Hash::check($request->password, $user->password)) {
                 $request->session()->put("logged_user", $user->id);
-                return redirect("/profile");
+                return redirect("/tasks");
             } else {
                 return back()->with("fail", "Invalid password");
             }
@@ -59,9 +59,8 @@ class AuthController extends Controller
         $data = null;
         if (Session::has("logged_user")) {
             $data = User::where("id", Session::get("logged_user"))->first();
-        }else {
-            return back()->with("fail", "Please login first");
-        
+        } else {
+            return redirect("/login");
         }
         return view("auth.profile", compact("data"));
     }
