@@ -5,21 +5,33 @@
     <div class="index_container">
 
         <div class="header">
-            <a href="/" class="logo">BUATAPA</a>
+            <a href="/" class="logo">
+                <img src="{{ asset('images/turtle.svg') }}" width="40px" height="40px" alt="">
+                BUATAPA
+            </a>
             <nav class="navbar">
                 <a href="/tasks">tasks</a>
                 <a href="/profile">profile</a>
             </nav>
         </div>
-
         <div class="title">
             <h1>To-do tasks</h1>
             <hr>
         </div>
         <div class="content">
+            <div class="vl">
+                <img src="{{ asset('images/turtle.png') }}" alt="description of myimage">
+                any idea?
+            </div>
             @foreach($tasks as $task)
 
             <div class="vl">
+
+                @if($task->isCompleted())
+                    <div class="complete">
+                        <span>completed</span>
+                    </div>
+                @endif
 
                 <h2>{{ $task->title }}</h2>
                 <p>{{ $task->description }}</p>
@@ -39,7 +51,6 @@
                     </form>
                 @else
                     <form action="/tasks/{{ $task->id }}" method="post">
-                        <span>completed</span>
                         @method('delete')
                         @csrf
                         <button input="submit" class="delete_button">

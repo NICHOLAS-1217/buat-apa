@@ -4,7 +4,10 @@
 
     <div class="profile_container">
         <div class="header">
-            <a href="/" class="logo">BUATAPA</a>
+            <a href="/" class="logo">
+                <img src="{{ asset('images/turtle.svg') }}" width="40px" height="40px" alt="">
+                BUATAPA
+            </a>
             <nav class="navbar">
                 <a href="/tasks">tasks</a>
                 <a href="/profile">profile</a>
@@ -15,6 +18,12 @@
             <hr>
         </div>
         <div class="main">
+            <script src="https://cdn.lordicon.com/lordicon.js"></script>
+            <lord-icon
+                src="https://cdn.lordicon.com/bgebyztw.json"
+                trigger="hover"
+                style="width:250px;height:250px">
+            </lord-icon>
             <table>
                 <tr>
                     <td>
@@ -32,11 +41,18 @@
                     </td>
                     <td>{{$data->email}}</td>
                 </tr>
-                penat sudah?
-                <div class="vl">
-                    <a href="/logout">logout</a>
-                </div>
             </table>
+            <div class="vl">
+                <a href="/logout">
+                    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                    <lord-icon
+                        src="https://cdn.lordicon.com/gwvmctbb.json"
+                        trigger="hover"
+                        style="width:200px;height:200px">
+                    </lord-icon>
+                </a>
+            </div>
+            penat sudah?
         </div>
     </div>
 

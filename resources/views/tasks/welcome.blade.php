@@ -3,7 +3,10 @@
 @section('content')
     <div class="welcome_container">
         <div class="header">
-            <a href="/" class="logo">BUATAPA</a>
+            <a href="/" class="logo">
+                <img src="{{ asset('images/turtle.svg') }}" width="40px" height="40px" alt="">
+                BUATAPA
+            </a>
             <nav class="navbar">
                 <a href="/tasks">tasks</a>
                 <a href="/profile">profile</a>
