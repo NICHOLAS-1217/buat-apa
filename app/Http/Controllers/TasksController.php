@@ -27,7 +27,7 @@ class TasksController extends Controller {
     }
 
     public function save(Request $request) {
-        $task = Task::create([
+        Task::create([
             "title" => $request->input("title"),
             "description" => $request->input("description")
         ]);
