@@ -16,8 +16,9 @@ class TasksController extends Controller {
     public function index() {
         $data = null;
         if (Session::has("logged_user")) {
-            $data = User::where("id", Session::get("logged_user"))->first();
-            $tasks = Task::
+            $user_id = Session::get("logged_user");
+            $data = User::where("id", $user_id)->first();
+            $tasks = Task::where("user_id", $user_id)->
             orderBy("completed_at")->
             orderBy("id", "DESC")->
             get();
@@ -45,12 +46,17 @@ class TasksController extends Controller {
     }
 
     public function save(Request $request) {
-        Task::create([
-            "title" => $request->input("title"),
-            "description" => $request->input("description")
-        ]);
-        
-        return redirect('/tasks');
+        if (Session::has("logged_user")){
+            $user_id = Session::get("logged_user");
+            Task::create([
+                "user_id" => $user_id,
+                "title" => $request->input("title"),
+                "description" => $request->input("description")
+            ]);
+            return redirect('/tasks');
+        } else {
+            return redirect("/login");
+        }
     }
 
     public function complete($id) {
