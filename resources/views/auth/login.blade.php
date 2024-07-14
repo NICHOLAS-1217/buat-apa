@@ -7,7 +7,6 @@
             <a href="/" class="logo">BUATAPA</a>
             <nav class="navbar">
                 <a href="/tasks">tasks</a>
-                <a href="/tasks/create">add</a>
                 <a href="/profile">profile</a>
             </nav>
         </div>
@@ -28,27 +27,29 @@
             <form action="{{route('login_user')}}" method=“get”>
                 @csrf
                 <label for="username">username</label><br>
-                    <input type="text" name="username" id="username" value="{{old('username')}}"><br>
+                    <input type="text" name="username" id="username" value="{{old('username')}}" class="input"><br>
                     <span>
                         @error('username')
                             {{$message}}
                         @enderror
                 </span><br>
                 <label for="email">email</label><br>
-                <input type="text" name="email" id="email"><br>
+                <input type="text" name="email" id="email" class="input"><br>
                 <span>
                     @error('email')
                         {{$message}}
                     @enderror
                 </span><br>
                 <label for="password">password</label><br>
-                <input type="password" name="password" id="password"><br>
+                <input type="password" name="password" id="password" class="input"><br>
                 <span>
                     @error('password')
                         {{$message}}
                     @enderror
                 </span><br>
-                <button type="submit">confirm</button><br>
+                <button type="submit" class="button">
+                    confirm
+                </button><br>
                 @if(Session::has('success'))
                     <span>
                         {{Session::get('success')}}

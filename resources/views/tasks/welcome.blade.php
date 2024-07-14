@@ -6,7 +6,6 @@
             <a href="/" class="logo">BUATAPA</a>
             <nav class="navbar">
                 <a href="/tasks">tasks</a>
-                <a href="/tasks/create">add</a>
                 <a href="/profile">profile</a>
             </nav>
         </div>

@@ -30,7 +30,8 @@ class AuthController extends Controller
         $user->password = Hash::make($request->password);
         $res = $user->save();
         if($res) {
-            return back()->with("success", "User created successfully");
+            // return back()->with("success", "User created successfully");
+            return redirect("/login");
         } else {
             return back()->with("fail", "Something went wrong");
         }

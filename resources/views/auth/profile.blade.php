@@ -7,7 +7,6 @@
             <a href="/" class="logo">BUATAPA</a>
             <nav class="navbar">
                 <a href="/tasks">tasks</a>
-                <a href="/tasks/create">add</a>
                 <a href="/profile">profile</a>
             </nav>
         </div>
@@ -18,16 +17,25 @@
         <div class="main">
             <table>
                 <tr>
-                    <td>username</td>
+                    <td>
+                        <div class="vl">
+                            username
+                        </div>
+                    </td>
                     <td>{{$data->username}}</td>
                 </tr>
                 <tr>
-                    <td>email</td>
+                    <td>
+                        <div class="vl">
+                            email
+                        </div>
+                    </td>
                     <td>{{$data->email}}</td>
                 </tr>
-                <tr>
-                    <td><a href="/logout">logout</a></td>
-                </tr>
+                penat sudah?
+                <div class="vl">
+                    <a href="/logout">logout</a>
+                </div>
             </table>
         </div>
     </div>

@@ -8,7 +8,6 @@
             <a href="/" class="logo">BUATAPA</a>
             <nav class="navbar">
                 <a href="/tasks">tasks</a>
-                <a href="/tasks/create">add</a>
                 <a href="/profile">profile</a>
             </nav>
         </div>
@@ -22,17 +21,14 @@
 
             <div class="vl">
 
-                @if($task->isCompleted())
-                    <span>completed</span>
-                @endif
-
                 <h2>{{ $task->title }}</h2>
                 <p>{{ $task->description }}</p>
+                
                 @if(!$task->isCompleted())
                     <form action="/tasks/{{ $task->id }}" method="post">
                         @method('patch')
                         @csrf
-                        <button input="submit">
+                        <button input="submit" class="done_button">
                             <script src="https://cdn.lordicon.com/lordicon.js"></script>
                             <lord-icon
                                 src="https://cdn.lordicon.com/cgzlioyf.json"
@@ -43,13 +39,15 @@
                     </form>
                 @else
                     <form action="/tasks/{{ $task->id }}" method="post">
+                        <span>completed</span>
                         @method('delete')
                         @csrf
-                        <button input="submit">
+                        <button input="submit" class="delete_button">
                             <script src="https://cdn.lordicon.com/lordicon.js"></script>
                             <lord-icon
                                 src="https://cdn.lordicon.com/drxwpfop.json"
                                 trigger="hover"
+                                colors="primary:#121331,secondary:#000000"
                                 style="width:50px;height:50px">
                             </lord-icon>    
                         </button>
