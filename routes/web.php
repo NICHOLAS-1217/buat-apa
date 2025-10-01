@@ -12,6 +12,10 @@ Route::get('/tasks/create', [TasksController::class, 'create']);
 
 Route::post('/tasks', [TasksController::class, 'save']);
 
+Route::get('/tasks/{id}/edit', [TasksController::class, 'edit']);
+
+Route::put('/tasks/{id}', [TasksController::class, 'update']);
+
 Route::patch('/tasks/{id}', [TasksController::class, 'complete']);
 
 Route::delete('/tasks/{id}', [TasksController::class, 'delete']);

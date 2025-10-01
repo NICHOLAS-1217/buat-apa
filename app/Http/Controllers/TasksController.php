@@ -59,6 +59,17 @@ class TasksController extends Controller {
         }
     }
 
+    public function edit($id){
+        $task = Task::findOrFail($id);
+        return view('tasks.edit', compact('task'));
+    }
+
+    public function update(Request $request, $id){
+        $task = Task::findOrFail($id);
+        $task->update($request->all());
+        return redirect('/tasks');
+    }
+
     public function complete($id) {
         $task = Task::where("id", $id)->first();
         $task->completed_at = now();
